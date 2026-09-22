@@ -214,6 +214,6 @@ html, body{
     .memberImage img{
         width: 90%;
         height: auto;
-        
+        transform: translateY(15px);
     }
 }
