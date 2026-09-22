@@ -142,6 +142,8 @@ html, body{
     justify-content:center;
     align-items: center;
     overflow: hidden;
+    opacity:0;
+    animation: picGo 1s ease forwards;
 }
 .memberImage img{
     width: 80%;
@@ -151,6 +153,17 @@ html, body{
 .memberInfo{
     padding: 50px;
     align-self: start;
+    opacity: 0;
+    animation: picGo 1s ease forwards;
+}
+@keyframes picGo {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 .memberInfo p{
     font-size:17px;
