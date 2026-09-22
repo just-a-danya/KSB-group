@@ -126,6 +126,35 @@ html, body{
     object-position: center;
     display: block;
 }
+.memberPage {
+    background: black;
+    color: white;
+    font-family: 'Courier New';
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.memberImage{
+    transform: translateY(50px);
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    overflow: hidden;
+}
+.memberImage img{
+    width: 80%;
+    height: auto;
+    display: block;
+}
+.memberInfo{
+    padding: 50px;
+    align-self: start;
+}
+.memberInfo p{
+    font-size:17px;
+}
 .cardOverlay{
     position: absolute;
     left:0;
