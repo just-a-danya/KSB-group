@@ -210,6 +210,7 @@ html, body{
     }
     .memberImage{
         height: 60vh;
+        transform: translateY(15px);
     }
     .memberImage img{
         width: 90%;
