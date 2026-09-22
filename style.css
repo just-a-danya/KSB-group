@@ -202,4 +202,20 @@ html, body{
     .membersCard img{
         height: 400px;
     }
+    .memberPage{
+        height: auto;
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        overflow: hidden;
+    }
+    .memberImage{
+        height: 60vh;
+        overflow: hidden;
+    }
+    .memberImage img{
+        width: 90%;
+        height: auto;
+        
+    }
 }
