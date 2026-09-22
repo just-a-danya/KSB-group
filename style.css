@@ -151,3 +151,26 @@ html, body{
     background: white;
     color: black;
 }
+
+@media(max-width: 900px){
+    .members{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media(max-width: 600px){
+    .about{
+        padding: 70px 20px;
+    }
+    .aboutText h2{
+        font-size: 36px;
+    }
+    .aboutText p{
+        font-size: 17px;
+    }
+    .members{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .membersCard img{
+        height: 400px;
+    }
+}
