@@ -1,10 +1,12 @@
 const members = document.querySelectorAll('.memberImage');
 
 members.forEach(member => {
-    member.addEventListener('click', function(event) {
+    const mainImage = member.querySelector('.mainImage');
+
+    mainImage.addEventListener('click', function(event) {
         event.stopPropagation();
 
-        this.classList.toggle('active');
+        member.classList.toggle('active');
     });
 });
 
