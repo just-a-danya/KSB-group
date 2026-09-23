@@ -181,6 +181,7 @@ body {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
 }
 
 .memberImage {
@@ -319,6 +320,9 @@ body {
     .photoRight {
         display: none;
     }
+    .memberPage{
+        overflow: visible;
+    }
 }
 
 /* =========================
@@ -347,6 +351,7 @@ body {
         height: auto;
         min-height: 100vh;
         grid-template-columns: 1fr;
+        overflow: visible;
     }
 
     .memberImage {
