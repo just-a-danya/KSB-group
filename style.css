@@ -294,22 +294,6 @@ html, body {
         visibility: hidden;
         pointer-events: none;
     }
-
-    /* Нажали на главную фотографию */
-    .memberImage.active .photoLeft {
-        visibility: visible;
-        transform: translateX(0);
-    }
-
-    .memberImage.active .photoRight {
-        visibility: visible;
-        transform: translateX(200%);
-    }
-
-    /* Никакого scale на мобильных */
-    .memberImage img {
-        transform: none !important;
-    }
 }
 
 @media(max-width: 724px) {
@@ -354,17 +338,6 @@ html, body {
     .photoRight {
         visibility: hidden;
         pointer-events: none;
-    }
-
-    /* Нажали на главную фотографию */
-    .memberImage.active .photoLeft {
-        visibility: visible;
-        transform: translateX(0);
-    }
-
-    .memberImage.active .photoRight {
-        visibility: visible;
-        transform: translateX(200%);
     }
 
     /* Никакого scale на мобильных */
