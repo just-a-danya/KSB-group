@@ -2,48 +2,45 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     height: 100%;
     scroll-behavior: smooth;
 }
-/*.menu {
-    position: static;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #535252;
-    backdrop-filter: blur(10px);
-}
-*/
+
 .logo {
     font-size: 24px;
     font-weight: bold;
     text-align: center;
 }
 
-    .logo a {
-        font-size: 24px;
-        font-weight: bold;
-        text-decoration: none;
-        color: white;
-    }
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+/* =========================
+   ГЛАВНАЯ
+   ========================= */
 
 .mainPic {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), url(https://avatars.mds.yandex.net/get-afishanew/4768735/13fa4399eeb7d39a54dc8a29b2d18888/orig);
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+        url(https://avatars.mds.yandex.net/get-afishanew/4768735/13fa4399eeb7d39a54dc8a29b2d18888/orig);
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
+
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+
     color: white;
 }
 
@@ -61,18 +58,18 @@ html, body {
     padding: 10px 20px;
     border-radius: 20px;
     color: white;
-    box-shadow: 0px 8px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-    .button:hover {
-        transform: translateY(-4px);
-        box-shadow: 0px 12px 27px rgb(0,0,0,0.4);
-    }
+.button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 27px rgba(0, 0, 0, 0.4);
+}
 
-    .button:active {
-        transform: scale(0.97);
-    }
+.button:active {
+    transform: scale(0.97);
+}
 
 .buttonCont {
     display: inline-block;
@@ -86,6 +83,10 @@ html, body {
     border-radius: 4px;
     transition: 0.3s;
 }
+
+/* =========================
+   ABOUT
+   ========================= */
 
 .about {
     min-height: 100vh;
@@ -101,16 +102,20 @@ html, body {
     margin: 0 auto 70px;
 }
 
-    .aboutText h2 {
-        font-size: 48px;
-        margin: 0 0 20px;
-    }
+.aboutText h2 {
+    font-size: 48px;
+    margin: 0 0 20px;
+}
 
-    .aboutText p {
-        font-size: 20px;
-        line-height: 1.6;
-        margin: 0;
-    }
+.aboutText p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* =========================
+   КАРТОЧКИ УЧАСТНИКОВ
+   ========================= */
 
 .members {
     display: grid;
@@ -124,94 +129,141 @@ html, body {
     position: relative;
     width: 100%;
     height: 450px;
-    position: relative;
     overflow: hidden;
 }
 
-    .memberCard img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        display: block;
-    }
+.memberCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.cardOverlay {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 25px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+}
+
+.cardOverlay h3 {
+    margin: 0 0 15px;
+    font-size: 24px;
+}
+
+.detailsButton {
+    display: inline-block;
+    padding: 9px 20px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.detailsButton:hover {
+    background: white;
+    color: black;
+}
+
+/* =========================
+   СТРАНИЦА УЧАСТНИКА
+   ========================= */
 
 .memberPage {
     background: black;
     color: white;
     font-family: 'Courier New';
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+
     height: 100vh;
 }
 
 .memberImage {
     position: relative;
-    transform: translateY(50px);
+    width: 100%;
+    min-width: 0;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    min-width: 0;
+
+    transform: translateY(50px);
     opacity: 0;
+
     animation: picGo 1s ease forwards;
-    overflow: hidden;
+
+    /* Важно: дополнительные фото могут выходить за пределы */
+    overflow: visible;
 }
 
-    .memberImage img {
-        display: block;
-        width: 80%;
-        height: auto;
-        transition: transform 0.5s ease;
-    }
+.memberImage img {
+    display: block;
+    width: 80%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
 
 .mainImage {
     position: relative;
     z-index: 1;
 }
 
-
 /* =========================
-   ЛЕВАЯ ДОПОЛНИТЕЛЬНАЯ ФОТО
+   ЛЕВАЯ ФОТО
    ========================= */
 
 .photoLeft {
     position: absolute;
+
     top: 100px;
     left: 30px;
+
     width: 30% !important;
     height: auto;
+
     object-fit: cover;
+
     transform: translateX(-120%);
     transition: transform 0.5s ease;
+
     z-index: 2;
     border-radius: 10px;
+
     pointer-events: none;
 }
 
-
 /* =========================
-   ПРАВАЯ ДОПОЛНИТЕЛЬНАЯ ФОТО
+   ПРАВАЯ ФОТО
    ========================= */
 
 .photoRight {
     position: absolute;
+
     top: 30%;
     left: 0;
+
     width: 30% !important;
     height: auto;
+
     object-fit: cover;
+
     transform: translateX(340%);
     transition: transform 0.5s ease;
+
     z-index: 3;
     border-radius: 10px;
+
     pointer-events: none;
 }
 
-
 /* =========================
-   ТОЛЬКО ПК
+   АНИМАЦИЯ ТОЛЬКО НА ПК
    ========================= */
 
 @media (hover: hover) and (min-width: 1025px) {
@@ -229,13 +281,9 @@ html, body {
     }
 }
 
-
-.memberInfo {
-    padding: 50px;
-    align-self: start;
-    opacity: 0;
-    animation: picGo 1s ease forwards;
-}
+/* =========================
+   АНИМАЦИЯ ПОЯВЛЕНИЯ
+   ========================= */
 
 @keyframes picGo {
     from {
@@ -247,56 +295,41 @@ html, body {
     }
 }
 
+.memberInfo {
+    padding: 50px;
+    align-self: start;
+
+    opacity: 0;
+    animation: picGo 1s ease forwards;
+}
+
 .memberInfo p {
     font-size: 17px;
 }
 
-.cardOverlay {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding: 25px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.7));
-}
+/* =========================
+   ПЛАНШЕТ
+   ========================= */
 
-    .cardOverlay h3 {
-        margin: 0 0 15px;
-        font-size: 24px;
-    }
+@media (max-width: 1024px) {
 
-.detailsButton {
-    display: inline-block;
-    padding: 9px 20px;
-    border: 1px solid white;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-    .detailsButton:hover {
-        background: white;
-        color: black;
-    }
-
-@media(max-width: 1024px) {
     .members {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .memberImage {
-        overflow: hidden;
-    }
-
-    /* Дополнительные фотографии изначально полностью скрыты */
+    /* Дополнительные фото скрыты */
     .photoLeft,
     .photoRight {
-        visibility: hidden;
-        pointer-events: none;
+        display: none;
     }
 }
 
-@media(max-width: 724px) {
+/* =========================
+   ТЕЛЕФОН
+   ========================= */
+
+@media (max-width: 724px) {
+
     .about {
         padding: 70px 20px;
     }
@@ -310,37 +343,26 @@ html, body {
     }
 
     .members {
-        grid-template-columns: repeat(1,1fr);
-    }
-
-    .membersCard img {
-        height: 400px;
+        grid-template-columns: 1fr;
     }
 
     .memberPage {
         height: auto;
         min-height: 100vh;
-        display: grid;
         grid-template-columns: 1fr;
     }
 
     .memberImage {
         height: 60vh;
-        transform: translateY(15px);
     }
 
-    .memberImage {
-        overflow: hidden;
-    }
-
-    /* Дополнительные фотографии изначально полностью скрыты */
+    /* ПОЛНОСТЬЮ УБИРАЕМ ДОПОЛНИТЕЛЬНЫЕ ФОТО */
     .photoLeft,
     .photoRight {
-        visibility: hidden;
-        pointer-events: none;
+        display: none !important;
     }
 
-    /* Никакого scale на мобильных */
+    /* На телефоне нет увеличения главной фотографии */
     .memberImage img {
         transform: none !important;
     }
