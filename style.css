@@ -180,7 +180,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    height: 100vh;
+    height: 100dvh;
     overflow: hidden;
 }
 
@@ -367,5 +367,35 @@ body {
     /* На телефоне нет увеличения главной фотографии */
     .memberImage img {
         transform: none !important;
+    }
+}
+@media (max-width: 1024px) and (orientation: landscape) {
+
+    .memberPage {
+        height: auto;
+        min-height: 100dvh;
+
+        grid-template-columns: 1fr;
+
+        overflow: visible;
+    }
+
+    .memberImage {
+        height: auto;
+        min-height: 70vh;
+    }
+
+    .memberImage img {
+        width: 60%;
+        transform: none !important;
+    }
+
+    .photoLeft,
+    .photoRight {
+        display: none !important;
+    }
+
+    .memberInfo {
+        padding: 30px 8%;
     }
 }
