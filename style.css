@@ -149,7 +149,7 @@ html, body{
     width: 80%;
     height: auto;
     display: block;
-    transition: 0.5s ease, box-shadow 0.5s ease;
+    transition: 0.5s ease
 }
 .memberImage img:hover{
     transform: scale(1.04);
@@ -230,12 +230,26 @@ html, body{
     color: black;
 }
 
-@media(max-width: 900px){
+@media(max-width: 1024px){
     .members{
         grid-template-columns: repeat(2,1fr);
     }
+    .memberImage:hover photoLeft{
+        transform: translateX(-120%);
+    }
+    .memberImage:hover .photoRight {
+        transform: translateX(340%);
+    }
+
+    .memberImage.active .photoLeft {
+        transform: translateX(0);
+    }
+
+    .memberImage.active .photoRight {
+        transform: translateX(200%);
+    }
 }
-@media(max-width: 600px){
+@media(max-width: 724px){
     .about{
         padding: 70px 20px;
     }
@@ -266,4 +280,19 @@ html, body{
         height: auto;
         transform: translateY(15px);
     }
+        .memberImage:hover photoLeft {
+            transform: translateX(-120%);
+        }
+
+        .memberImage:hover .photoRight {
+            transform: translateX(340%);
+        }
+
+        .memberImage.active .photoLeft {
+            transform: translateX(0);
+        }
+
+        .memberImage.active .photoRight {
+            transform: translateX(200%);
+        }
 }
