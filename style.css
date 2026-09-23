@@ -149,8 +149,44 @@ html, body{
     width: 80%;
     height: auto;
     display: block;
+    transition: 0.5s ease, box-shadow 0.5s ease;
 }
-.memberInfo{
+.memberImage img:hover{
+    transform: scale(1.04);
+}
+.mainImage{
+    position: relative;
+    z-index: 1;
+}
+.photoLeft{
+    position: absolute;
+    top: 100px;
+    left: 30px;
+    width: 30% !important;
+    object-fit: cover;
+    transform: translateX(-120%);
+    transition: transform 0.5s ease;
+    z-index: 2;
+    border-radius: 10px;
+}
+.memberImage:hover .photoLeft{
+    transform: translateX(0);
+}
+.photoRight{
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 30% !important;
+    object-fit: cover;
+    transform: translateX(340%);
+    transition: transform 0.5s ease;
+    z-index: 3;
+    border-radius: 10px;
+}
+.memberImage:hover .photoRight {
+    transform: translateX(200%);
+}
+.memberInfo {
     padding: 50px;
     align-self: start;
     opacity: 0;
@@ -221,7 +257,7 @@ html, body{
         display: grid;
         grid-template-columns: 1fr;
     }
-    .memberImage{
+    .memberImage {
         height: 60vh;
         transform: translateY(15px);
     }
