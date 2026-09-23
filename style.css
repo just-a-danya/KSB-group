@@ -176,7 +176,6 @@ body {
     background: black;
     color: white;
     font-family: 'Courier New';
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -206,6 +205,7 @@ body {
     width: 80%;
     height: auto;
     transition: transform 0.5s ease;
+    overflow: hidden;
 }
 
 .mainImage {
