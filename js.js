@@ -1,14 +1,15 @@
-document.querySelectorAll('.memberImage').forEach(member => {
+const members = document.querySelectorAll('.memberImage');
 
-    member.addEventListener('click', function (event) {
+members.forEach(member => {
+    member.addEventListener('click', function(event) {
         event.stopPropagation();
+
         this.classList.toggle('active');
     });
-
 });
 
-document.addEventListener('click', function () {
-    document.querySelectorAll('.memberImage.active').forEach(member => {
+document.addEventListener('click', function() {
+    members.forEach(member => {
         member.classList.remove('active');
     });
 });
