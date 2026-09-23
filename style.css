@@ -180,7 +180,6 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-
     height: 100vh;
 }
 
@@ -195,7 +194,7 @@ body {
 
     transform: translateY(50px);
     opacity: 0;
-
+    overflow: hidden;
     animation: picGo 1s ease forwards;
 
     /* Важно: дополнительные фото могут выходить за пределы */
