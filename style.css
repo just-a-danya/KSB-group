@@ -147,41 +147,36 @@ html, body {
 }
 
 .memberImage {
-    position: relative;
     transform: translateY(50px);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    min-width: 0;
+    overflow: hidden;
     opacity: 0;
     animation: picGo 1s ease forwards;
-    overflow: hidden;
 }
 
     .memberImage img {
-        display: block;
         width: 80%;
         height: auto;
-        transition: transform 0.5s ease;
+        display: block;
+        transition: transform 0.5s ease
     }
+
+        .memberImage img:hover {
+            transform: scale(1.04);
+        }
 
 .mainImage {
     position: relative;
     z-index: 1;
 }
 
-
-/* =========================
-   ЛЕВАЯ ДОПОЛНИТЕЛЬНАЯ ФОТО
-   ========================= */
-
 .photoLeft {
     position: absolute;
     top: 100px;
     left: 30px;
     width: 30% !important;
-    height: auto;
     object-fit: cover;
     transform: translateX(-120%);
     transition: transform 0.5s ease;
@@ -190,17 +185,11 @@ html, body {
     pointer-events: none;
 }
 
-
-/* =========================
-   ПРАВАЯ ДОПОЛНИТЕЛЬНАЯ ФОТО
-   ========================= */
-
 .photoRight {
     position: absolute;
     top: 30%;
     left: 0;
     width: 30% !important;
-    height: auto;
     object-fit: cover;
     transform: translateX(340%);
     transition: transform 0.5s ease;
@@ -209,16 +198,7 @@ html, body {
     pointer-events: none;
 }
 
-
-/* =========================
-   ТОЛЬКО ПК
-   ========================= */
-
 @media (hover: hover) and (min-width: 1025px) {
-
-    .memberImage img:hover {
-        transform: scale(1.04);
-    }
 
     .memberImage:hover .photoLeft {
         transform: translateX(0);
@@ -228,7 +208,6 @@ html, body {
         transform: translateX(200%);
     }
 }
-
 
 .memberInfo {
     padding: 50px;
@@ -284,31 +263,12 @@ html, body {
         grid-template-columns: repeat(2,1fr);
     }
 
-    .memberImage {
-        overflow: hidden;
-    }
-
-    /* Дополнительные фотографии изначально полностью скрыты */
-    .photoLeft,
-    .photoRight {
-        visibility: hidden;
-        pointer-events: none;
-    }
-
-    /* Нажали на главную фотографию */
     .memberImage.active .photoLeft {
-        visibility: visible;
         transform: translateX(0);
     }
 
     .memberImage.active .photoRight {
-        visibility: visible;
         transform: translateX(200%);
-    }
-
-    /* Никакого scale на мобильных */
-    .memberImage img {
-        transform: none !important;
     }
 }
 
@@ -345,30 +305,17 @@ html, body {
         transform: translateY(15px);
     }
 
-    .memberImage {
-        overflow: hidden;
-    }
+        .memberImage img {
+            width: 90%;
+            height: auto;
+            transform: translateY(15px);
+        }
 
-    /* Дополнительные фотографии изначально полностью скрыты */
-    .photoLeft,
-    .photoRight {
-        visibility: hidden;
-        pointer-events: none;
-    }
+        .memberImage.active .photoLeft {
+            transform: translateX(0);
+        }
 
-    /* Нажали на главную фотографию */
-    .memberImage.active .photoLeft {
-        visibility: visible;
-        transform: translateX(0);
-    }
-
-    .memberImage.active .photoRight {
-        visibility: visible;
-        transform: translateX(200%);
-    }
-
-    /* Никакого scale на мобильных */
-    .memberImage img {
-        transform: none !important;
-    }
+        .memberImage.active .photoRight {
+            transform: translateX(200%);
+        }
 }
