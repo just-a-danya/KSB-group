@@ -294,7 +294,7 @@ body {
 
 .memberInfo {
     padding: 50px;
-    align-self: start;
+    align-self: center;
 
     opacity: 0;
     animation: picGo 1s ease forwards;
