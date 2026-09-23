@@ -168,9 +168,7 @@ html, body{
     transition: transform 0.5s ease;
     z-index: 2;
     border-radius: 10px;
-}
-.memberImage:hover .photoLeft{
-    transform: translateX(0);
+    poiner-events: none;
 }
 .photoRight{
     position: absolute;
@@ -182,9 +180,18 @@ html, body{
     transition: transform 0.5s ease;
     z-index: 3;
     border-radius: 10px;
+    poiner-events: none;
 }
-.memberImage:hover .photoRight {
-    transform: translateX(200%);
+@media (hover: hover) and (min-width: 1025px) {
+
+    .memberImage:hover .photoLeft {
+        transform: translateX(0);
+    }
+
+    .memberImage:hover .photoRight {
+        transform: translateX(200%);
+    }
+
 }
 .memberInfo {
     padding: 50px;
@@ -234,13 +241,6 @@ html, body{
     .members{
         grid-template-columns: repeat(2,1fr);
     }
-    .memberImage:hover photoLeft{
-        transform: translateX(-120%);
-    }
-    .memberImage:hover .photoRight {
-        transform: translateX(340%);
-    }
-
     .memberImage.active .photoLeft {
         transform: translateX(0);
     }
@@ -280,14 +280,6 @@ html, body{
         height: auto;
         transform: translateY(15px);
     }
-        .memberImage:hover photoLeft {
-            transform: translateX(-120%);
-        }
-
-        .memberImage:hover .photoRight {
-            transform: translateX(340%);
-        }
-
         .memberImage.active .photoLeft {
             transform: translateX(0);
         }
