@@ -241,6 +241,20 @@ html, body{
     .members{
         grid-template-columns: repeat(2,1fr);
     }
+      .memberImage img:hover {
+        transform: none;
+    }
+
+    /* Начальное состояние */
+    .photoLeft {
+        transform: translateX(-120%);
+    }
+
+    .photoRight {
+        transform: translateX(340%);
+    }
+
+    /* Состояние после нажатия */
     .memberImage.active .photoLeft {
         transform: translateX(0);
     }
@@ -280,11 +294,25 @@ html, body{
         height: auto;
         transform: translateY(15px);
     }
-        .memberImage.active .photoLeft {
-            transform: translateX(0);
-        }
+          .memberImage img:hover {
+        transform: none;
+    }
 
-        .memberImage.active .photoRight {
-            transform: translateX(200%);
-        }
+    /* Начальное состояние */
+    .photoLeft {
+        transform: translateX(-120%);
+    }
+
+    .photoRight {
+        transform: translateX(340%);
+    }
+
+    /* Состояние после нажатия */
+    .memberImage.active .photoLeft {
+        transform: translateX(0);
+    }
+
+    .memberImage.active .photoRight {
+        transform: translateX(200%);
+    }
 }
