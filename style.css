@@ -51,7 +51,10 @@ body {
     padding: 30px;
     font-family: 'Courier New';
 }
-
+.textGroup{
+    max-width: 100%;
+    line-height: 1.6;
+}
 .button {
     margin-top: 20px;
     margin-left: 30px;
@@ -62,7 +65,9 @@ body {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s, box-shadow 0.2s;
 }
-
+.groupButton{
+    color: white;
+}
 .button:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 27px rgba(0, 0, 0, 0.4);
